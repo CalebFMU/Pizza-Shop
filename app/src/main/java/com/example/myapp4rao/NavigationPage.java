@@ -22,10 +22,19 @@ public class NavigationPage extends AppCompatActivity {
             }
         });
 
-        final Button customerButton = findViewById(R.id.customerButton);
-        customerButton.setOnClickListener(new View.OnClickListener() {
+        final Button salesButton = findViewById(R.id.salesRepButton);
+        salesButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), CustomerPage.class);
+                Intent intent = new Intent(v.getContext(), SalesReport.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        final Button orderButton = findViewById(R.id.orderButton);
+        orderButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), OrderPage.class);
                 startActivity(intent);
                 finish();
             }
