@@ -19,7 +19,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String customerName = "Name";
     private static final String customerAddress = "Address";
     private static final String customerCreditNum = "Credit_Card_Num";
-    private static final String customerPhoneNum = "Phone_Num";
+
+    private static final String pizzaTable = "Pizza";
+    private static final String pizzaSize = "Pizza_Size";
+    private static final String pizzaType = "Pizza_Type";
+    private static final String pizzaPrice = "Pizza_Price";
+
 
 
 
@@ -32,10 +37,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + loginUsername + " TEXT, "
                 + loginPassword + " TEXT, "
                 + loginAdmin + " TEXT);" );
+
+        sqLiteDB.execSQL("CREATE TABLE " + customerTable + " ("
+                + customerName + " TEXT, "
+                + customerAddress + " TEXT, "
+                + customerCreditNum + " TEXT);");
+
+        sqLiteDB.execSQL("CREATE TABLE " + pizzaTable + " ("
+                + pizzaSize + " TEXT, "
+                + pizzaType + " TEXT, "
+                + pizzaPrice + " TEXT);" );
     }
 
     public void onUpgrade(SQLiteDatabase sqLiteDB, int i, int i1) {
         sqLiteDB.execSQL("DROP TABLE IF EXISTS " + loginTable);
+        sqLiteDB.execSQL("DROP TABLE IF EXISTS " + customerTable);
+        sqLiteDB.execSQL("DROP TABLE IF EXISTS " + pizzaTable);
+
         onCreate(sqLiteDB);
     }
 
