@@ -83,12 +83,19 @@ public class OrderPage extends AppCompatActivity {
             }
         });
 
-        final Button placeOrderButton = findViewById(R.id.buttonPlaceOrder);
-        placeOrderButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+
+
+  final Button placeOrderButton = findViewById(R.id.buttonPlaceOrder);
+  placeOrderButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v)
+      {
+          startActivity(new Intent(OrderPage.this,OrderViewer.class));
+
+      }
+  });
 
             }
-        });
+
     }
-}
+
