@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorLightBlue"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrderPage">
+
+    <Button
+        android:id="@+id/buttonMed"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:background="@color/colorDarkGray"
+        android:text="M"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/buttonLarge"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonLarge"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="900dp"
+        android:layout_marginRight="900dp"
+        android:layout_marginBottom="25dp"
+        android:background="@color/colorDarkGray"
+        android:text="L"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCheese"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/orderMenuTextBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="230dp"
+        android:layout_marginRight="230dp"
+        android:text="Place Order"
+        android:textColor="@android:color/white"
+        android:textSize="78sp"
+        app:fontFamily="serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSmall"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="25dp"
+        android:background="@color/colorDarkGray"
+        android:text="S"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCheese"
+        app:layout_constraintEnd_toStartOf="@+id/buttonMed"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonCheese"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="275dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="900dp"
+        android:layout_marginRight="900dp"
+        android:background="@color/colorOrange"
+        android:text="Cheese"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMed" />
+
+    <Button
+        android:id="@+id/buttonPep"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="275dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="900dp"
+        android:layout_marginRight="900dp"
+        android:background="@color/colorRed"
+        android:text="Pepperoni"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCheese" />
+
+    <Button
+        android:id="@+id/buttonSup"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="275dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="900dp"
+        android:layout_marginRight="900dp"
+        android:background="@color/colorGreen"
+        android:text="Supreme"
+        android:textSize="38sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPep" />
+
+    <Button
+        android:id="@+id/buttonPlaceOrder"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="275dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="900dp"
+        android:layout_marginRight="900dp"
+        android:background="@color/colorDarkGray"
+        android:text="Place Order"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSup" />
+
+    <Button
+        android:id="@+id/buttonLogOut"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="275dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="900dp"
+        android:layout_marginRight="900dp"
+        android:background="@android:color/darker_gray"
+        android:text="Log Out"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPlaceOrder" />
+
+    <TextView
+        android:id="@+id/orderViewerSize"
+        android:layout_width="500dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="175dp"
+        android:layout_marginRight="175dp"
+        android:background="@android:color/darker_gray"
+        android:gravity="right"
+        android:padding="30dp"
+        android:text="Pizza Size"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:visibility="visible"
+        app:fontFamily="sans-serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderMenuTextBox" />
+
+    <TextView
+        android:id="@+id/orderViewerPizzaType"
+        android:layout_width="500dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="172dp"
+        android:layout_marginRight="172dp"
+        android:background="@android:color/darker_gray"
+        android:gravity="right"
+        android:padding="30dp"
+        android:text="Pizza Type"
+        android:textColor="@android:color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:visibility="visible"
+        app:fontFamily="sans-serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderViewerSize" />
+
+</android.support.constraint.ConstraintLayout>
