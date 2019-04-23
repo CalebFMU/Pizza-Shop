@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".OrderPage"></activity>
-        <activity android:name=".CustomerPage" />
+        <activity android:name=".SalesReport" />
         <activity android:name=".NavigationPage" />
         <activity android:name=".MainActivity">
             <intent-filter>

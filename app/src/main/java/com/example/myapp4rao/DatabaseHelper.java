@@ -19,6 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String customerName = "Name";
     private static final String customerAddress = "Address";
     private static final String customerCreditNum = "Credit_Card_Num";
+    private static final String customerDate = "Date";
 
     private static final String pizzaTable = "Pizza";
     private static final String pizzaSize = "Pizza_Size";
@@ -41,7 +42,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDB.execSQL("CREATE TABLE " + customerTable + " ("
                 + customerName + " TEXT, "
                 + customerAddress + " TEXT, "
-                + customerCreditNum + " TEXT);");
+                + customerCreditNum + " TEXT, "
+                + customerDate + "TEXT);" );
 
         sqLiteDB.execSQL("CREATE TABLE " + pizzaTable + " ("
                 + pizzaSize + " TEXT, "

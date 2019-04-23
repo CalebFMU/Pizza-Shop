@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -46,9 +47,10 @@ public class MainActivity extends AppCompatActivity {
                 Cursor cursor = sqLiteDBHelper.getUsername(username, password);
                 cursor.moveToFirst();
                 int column = cursor.getColumnIndex(sqLiteDBHelper.getLoginAdmin());
-                String adminStatus = cursor.getString(column);
+
                 Intent intent;
                 if( cursor.getCount() > 0) {
+                    String adminStatus = cursor.getString(column);
                     if( adminStatus.equalsIgnoreCase("Y")) {
                         intent = new Intent(v.getContext(), NavigationPage.class);
                     }
