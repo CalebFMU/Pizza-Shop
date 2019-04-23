@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyApp4Rao</string>
+    <string name="Successful_confirm_order_msg">Order Place Successful</string>
+    <string name="Failed_confirm_msg">Please fill in the fields above.</string>
+</resources>
