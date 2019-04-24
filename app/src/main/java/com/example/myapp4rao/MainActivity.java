@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         sqLiteDBHelper = new DatabaseHelper(this);
         sqLiteDBHelper.addAttributes("Caleb","Password","Y");
         sqLiteDBHelper.addAttributes("Harley", "Password","Y");
+        sqLiteDBHelper.addAttributes("David", "Password","Y");
+
         sqLiteDBHelper.addAttributes("John","Doe","N");
 
         final Button buttonCancel = findViewById(R.id.loginButtonCancel);

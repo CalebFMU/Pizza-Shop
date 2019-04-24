@@ -3,8 +3,10 @@ package com.example.myapp4rao;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class OrderPage extends AppCompatActivity {
@@ -29,6 +31,10 @@ public class OrderPage extends AppCompatActivity {
             public void onClick(View v) {
                 TextView orderViewer = findViewById(R.id.orderViewerSize);
                 orderViewer.setText("Small");
+                TextView price = findViewById(R.id.orderPagePrice);
+
+                price.setText("6.00");
+
                 orderViewer.setVisibility(View.VISIBLE);
             }
         });
@@ -38,6 +44,10 @@ public class OrderPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TextView orderViewer = findViewById(R.id.orderViewerSize);
+                TextView price = findViewById(R.id.orderPagePrice);
+
+                price.setText("10.00");
+
                 orderViewer.setText("Medium");
                 orderViewer.setVisibility(View.VISIBLE);
             }
@@ -48,6 +58,10 @@ public class OrderPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TextView orderViewer = findViewById(R.id.orderViewerSize);
+                TextView price = findViewById(R.id.orderPagePrice);
+
+                price.setText("12.00");
+
                 orderViewer.setText("Large");
                 orderViewer.setVisibility(View.VISIBLE);
             }
@@ -78,17 +92,44 @@ public class OrderPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 TextView orderViewer = findViewById(R.id.orderViewerPizzaType);
+
                 orderViewer.setText("Supreme");
                 orderViewer.setVisibility(View.VISIBLE);
             }
         });
 
-        final Button placeOrderButton = findViewById(R.id.buttonPlaceOrder);
-        placeOrderButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+
+
+  final Button placeOrderButton = findViewById(R.id.buttonPlaceOrder);
+
+  placeOrderButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v)
+      {
+          startActivity(new Intent(OrderPage.this,OrderViewer.class));
+
+          String orderNum = "100";
+
+          TextView pizzatype = findViewById(R.id.orderViewerPizzaType);
+          String type = pizzatype.getText().toString();
+          Log.i("TAG", "type: " + type);
+
+          TextView pizzasize = findViewById(R.id.orderViewerSize);
+          String size = pizzasize.getText().toString();
+          Log.i("TAG", "type: " + size);
+
+          TextView pizzaprice = findViewById(R.id.orderPagePrice);
+          String price = pizzaprice.getText().toString();
+          Log.i("TAG", "type: " + price);
+
+          MainActivity.sqLiteDBHelper.insertPizza(orderNum,type,size,price);
+
+
+
+      }
+  });
 
             }
-        });
+
     }
-}
+

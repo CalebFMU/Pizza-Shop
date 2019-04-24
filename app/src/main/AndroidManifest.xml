@@ -12,7 +12,9 @@
         <activity android:name=".OrderPage"></activity>
         <activity android:name=".SalesReport" />
         <activity android:name=".NavigationPage" />
+        <activity android:name=".OrderViewer" />
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
