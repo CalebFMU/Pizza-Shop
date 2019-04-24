@@ -27,20 +27,35 @@ public class OrderViewer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_viewer);
 
-        Cursor pizzaCursor = MainActivity.sqLiteDBHelper.readPizza("100");
+        Cursor pizzaCursor = MainActivity.sqLiteDBHelper.readPizza();
 
-        Log.i("TAG", "size: " + this.size);
-        Log.i("TAG", "type: " + this.type);
         if (pizzaCursor != null)
         {
             pizzaCursor.moveToFirst();
-        }
 
+        }
         // iterate
         while (!pizzaCursor.isAfterLast())
         {
+            this.size = pizzaCursor.getString(1);
+            TextView sizeText = findViewById(R.id.orderViewerSize2);
+            sizeText.setText(this.size);
+
+
+
+            this.type = pizzaCursor.getString(2);
+            TextView typeText = findViewById(R.id.orderViewerPizzaType3);
+            typeText.setText((this.type));
+
+
+            this.price = pizzaCursor.getString(3);
+            TextView priceText = findViewById(R.id.buttonPlaceOrder);
+            priceText.setText((this.price));
 
             pizzaCursor.moveToNext();
+
+
+
         }
 
         TextView sizeText = findViewById(R.id.orderViewerSize2);
@@ -78,7 +93,6 @@ public class OrderViewer extends AppCompatActivity {
 
                 Button mConfirm = (Button) mView.findViewById(R.id.confirmOrderButton);
                 Button mClose = (Button) mView.findViewById(R.id.btnCloseConfirmOrder);
-
 
                 mConfirm.setOnClickListener(new View.OnClickListener() {
                     @Override

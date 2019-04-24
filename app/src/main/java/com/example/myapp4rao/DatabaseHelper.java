@@ -89,8 +89,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
-        String table = "test";
-
         ContentValues contentValues = new ContentValues();
 
         contentValues.put(orderNum, num);
@@ -105,15 +103,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //read pizza data
-    public Cursor readPizza(String order){
+    public Cursor readPizza(){
 
-        String[] columns = {pizzaType, pizzaPrice, pizzaSize};
+        String[] columns = {orderNum, pizzaType, pizzaPrice, pizzaSize};
 
-        String selection = orderNum +" =?";
-
-        String[] selectionArgs = {order};
-
-        Cursor pizzaCursor = this.getReadableDatabase().query(pizzaTable, columns,  selection,  selectionArgs, null, null, null);
+        Cursor pizzaCursor = this.getReadableDatabase().query(pizzaTable, columns,  null, null, null, null, null);
 
         return pizzaCursor;
 

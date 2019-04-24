@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.database.Cursor;
+
 
 public class OrderPage extends AppCompatActivity {
 
@@ -106,9 +108,16 @@ public class OrderPage extends AppCompatActivity {
       @Override
       public void onClick(View v)
       {
-          startActivity(new Intent(OrderPage.this,OrderViewer.class));
 
-          String orderNum = "100";
+          int dbSize = 0;
+          String orderNum = "";
+
+          Cursor pizzaCursor = MainActivity.sqLiteDBHelper.readPizza();
+
+          dbSize = pizzaCursor.getCount();
+          orderNum = "00" + dbSize;
+
+          startActivity(new Intent(OrderPage.this,OrderViewer.class));
 
           TextView pizzatype = findViewById(R.id.orderViewerPizzaType);
           String type = pizzatype.getText().toString();
@@ -116,14 +125,13 @@ public class OrderPage extends AppCompatActivity {
 
           TextView pizzasize = findViewById(R.id.orderViewerSize);
           String size = pizzasize.getText().toString();
-          Log.i("TAG", "type: " + size);
+          Log.i("TAG", "size: " + size);
 
           TextView pizzaprice = findViewById(R.id.orderPagePrice);
           String price = pizzaprice.getText().toString();
-          Log.i("TAG", "type: " + price);
+          Log.i("TAG", "price: " + price);
 
           MainActivity.sqLiteDBHelper.insertPizza(orderNum,type,size,price);
-
 
 
       }
