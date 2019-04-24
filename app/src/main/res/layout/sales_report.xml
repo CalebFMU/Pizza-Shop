@@ -43,12 +43,31 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <Button
+            android:id="@+id/buttonPrev"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="600dp"
+            android:background="@color/colorDarkGray"
+            android:text="Prev"
+            android:textColor="@android:color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:typeface="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#FFFFFF"
             android:orientation="vertical"
-            android:layout_marginTop="190dp">
+            android:layout_marginTop="190dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -56,14 +75,16 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="650dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp">
 
                         <TextView
                             android:layout_width="650dp"
                             android:layout_height="wrap_content"
-                            android:text="Test Text"
+                            android:text="Order"
+                            android:textStyle="bold"
                             android:textSize="30dp"/>
 
                     <!-- PUT NEW TEXT BOXES FOR LEFT COLUMN BELOW -->
@@ -71,7 +92,37 @@
                     <TextView
                         android:layout_width="650dp"
                         android:layout_height="wrap_content"
-                        android:text="Test Text"
+                        android:text=" "
+                        android:textSize="30dp"/>
+                    <TextView
+                        android:layout_width="650dp"
+                        android:layout_height="wrap_content"
+                        android:text=" "
+                        android:textSize="30dp"/>
+                    <TextView
+                        android:layout_width="650dp"
+                        android:layout_height="wrap_content"
+                        android:text=" "
+                        android:textSize="30dp"/>
+                    <TextView
+                        android:layout_width="650dp"
+                        android:layout_height="wrap_content"
+                        android:text=" "
+                        android:textSize="30dp"/>
+                    <TextView
+                        android:layout_width="650dp"
+                        android:layout_height="wrap_content"
+                        android:text=" "
+                        android:textSize="30dp"/>
+                    <TextView
+                        android:layout_width="650dp"
+                        android:layout_height="wrap_content"
+                        android:text=" "
+                        android:textSize="30dp"/>
+                    <TextView
+                        android:layout_width="650dp"
+                        android:layout_height="wrap_content"
+                        android:text=" "
                         android:textSize="30dp"/>
 
                 </LinearLayout>
@@ -79,28 +130,24 @@
                 <LinearLayout
                         android:layout_width="650dp"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="650dp"
-                            android:layout_height="wrap_content"
-                            android:text="Test Text"
-                            android:textSize="30dp"/>
-
-                    <!-- PUT NEW TEXT BOXES FOR RIGHT COLUMN BELOW -->
-
-                    <TextView
-                        android:layout_width="650dp"
-                        android:layout_height="wrap_content"
-                        android:text="Test Text"
-                        android:textSize="30dp"/>
-
-
-                </LinearLayout>
+                        android:orientation="vertical"/>
 
             </LinearLayout>
 
         </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonNext"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="600dp"
+            android:background="@color/colorDarkGray"
+            android:text="Button"
+            android:textColor="@android:color/white"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            tools:text="Next" />
 
     </RelativeLayout>
 
