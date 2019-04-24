@@ -101,7 +101,7 @@ public class OrderViewer extends AppCompatActivity {
                             Toast.makeText(OrderViewer.this,
                                     "Order Placement Successful", Toast.LENGTH_SHORT).show();
 
-                                    dialog.dismiss();
+                            dialog.dismiss();
 
 
                         } else {
@@ -128,4 +128,3 @@ public class OrderViewer extends AppCompatActivity {
     }
 
 }
-
